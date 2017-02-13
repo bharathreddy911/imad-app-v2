@@ -15,7 +15,7 @@ var articleone={
     <p>this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article </p>`
 };
 function createtemplate(data){
-    var title=date.title;
+    var title=data.title;
     var date=data.date;
     var heading=data.heading;
     var content=data.content;
