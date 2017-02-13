@@ -12,7 +12,7 @@ app.get('/counter',function(req,res){
 });
 
 var articles={ 
-    'article-one' :{
+    'article-one':{
     title:'articleone bharath',
     heading:'Article One',
     date:'feb 14 2017',
@@ -21,14 +21,14 @@ var articles={
     <p>this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article </p>
     <p>this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article </p>`
 },
-    'article-two' :{
+    'article-two':{
         title:'article two bharath',
     heading:'Article two',
     date:'feb 15 2017',
     content:`
     <p>this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article </p>`
     },
-    'article-three' :{
+    'article-three':{
         title:'article three bharath',
     heading:'Article three',
     date:'feb 16 2017',
