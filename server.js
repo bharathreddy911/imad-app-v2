@@ -5,7 +5,14 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleone={
+counter=0;
+app.get('/counter',function(req,res){
+   counter=counter+1;
+   res.send(counter.toString());
+});
+
+var articles={ 
+    'articleone':{
     title:'articleone bharath',
     heading:'Article One',
     date:'feb 14 2017',
@@ -13,6 +20,22 @@ var articleone={
     <p>this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article </p>
     <p>this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article </p>
     <p>this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article </p>`
+},
+    'articletwo':{
+        title:'article two bharath',
+    heading:'Article two',
+    date:'feb 15 2017',
+    content:`
+    <p>this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article </p>`
+    },
+    'articlethree':{
+        title:'article three bharath',
+    heading:'Article three',
+    date:'feb 16 2017',
+    content:`
+    <p>this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article </p>
+    <p>this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article </p>`
+    },
 };
 function createtemplate(data){
     var title=data.title;
@@ -48,13 +71,9 @@ function createtemplate(data){
     return htmltemplate;
 }
 
-app.get('/article-one',function(req,res){
-   res.send(createtemplate(articleone));
-});
-counter=0;
-app.get('/counter',function(req,res){
-   counter=counter+1;
-   res.send(counter.toString());
+app.get('/:articleName',function(req,res){
+    var articleName=req.params.articleName;
+   res.send(createtemplate(articles[articleName]));
 });
 
 app.get('/article-two',function(req,res){
