@@ -12,7 +12,7 @@ app.get('/counter',function(req,res){
 });
 
 var articles={ 
-    'articleone':{
+    'articleone' :{
     title:'articleone bharath',
     heading:'Article One',
     date:'feb 14 2017',
@@ -21,14 +21,14 @@ var articles={
     <p>this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article </p>
     <p>this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article </p>`
 },
-    'articletwo':{
+    'articletwo' :{
         title:'article two bharath',
     heading:'Article two',
     date:'feb 15 2017',
     content:`
     <p>this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article </p>`
     },
-    'articlethree':{
+    'articlethree' :{
         title:'article three bharath',
     heading:'Article three',
     date:'feb 16 2017',
@@ -74,14 +74,6 @@ function createtemplate(data){
 app.get('/:articleName',function(req,res){
     var articleName=req.params.articleName;
    res.send(createtemplate(articles[articleName]));
-});
-
-app.get('/article-two',function(req,res){
-   res.sendFile(path.join(__dirname, 'ui', 'article-two.html')); 
-});
-
-app.get('/article-three',function(req,res){
-  res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
 });
 
 app.get('/', function (req, res) {
