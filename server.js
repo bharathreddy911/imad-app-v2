@@ -37,6 +37,7 @@ var articles={
     <p>this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article this is the content of my article </p>`
     },
 };
+
 function createtemplate(data){
     var title=data.title;
     var date=data.date;
